@@ -2,138 +2,20 @@
 # Similar to .gitignore, but for Docker
 # Why? Faster builds, smaller images, better security
 
-# ============================================
 # Version Control
-# ============================================
 .git
 .gitignore
-.gitattributes
 
-# ============================================
 # Docker Files (don't need these inside container)
-# ============================================
 Dockerfile
 docker-compose.yml
 .dockerignore
 
-# ============================================
+
 # Environment Files
-# ============================================
-# Don't copy .env files - use docker-compose environment variables instead
+# use docker-compose environment variables instead
 # This prevents accidentally baking secrets into the image
 .env
-.env.local
-.env.development
-.env.production
-.env.*.local
 
-# ============================================
 # Documentation
-# ============================================
-README.md
 *.md
-docs/
-LICENSE
-
-# ============================================
-# IDE and Editor Files
-# ============================================
-# VSCode
-.vscode/
-*.code-workspace
-
-# IntelliJ / GoLand
-.idea/
-*.iml
-
-# Vim
-*.swp
-*.swo
-*~
-
-# Emacs
-*~
-\#*\#
-.\#*
-
-# Sublime Text
-*.sublime-project
-*.sublime-workspace
-
-# ============================================
-# Operating System Files
-# ============================================
-# macOS
-.DS_Store
-.AppleDouble
-.LSOverride
-
-# Windows
-Thumbs.db
-ehthumbs.db
-Desktop.ini
-
-# Linux
-*~
-
-# ============================================
-# Build Artifacts
-# ============================================
-# Compiled binaries (will be rebuilt inside container)
-*.exe
-*.exe~
-*.dll
-*.so
-*.dylib
-main
-*.out
-
-# ============================================
-# Test Files
-# ============================================
-# Don't need tests in production image
-*_test.go
-testdata/
-coverage.txt
-coverage.html
-*.test
-
-# ============================================
-# Temporary Files
-# ============================================
-tmp/
-temp/
-*.tmp
-*.bak
-*.swp
-
-# ============================================
-# Logs
-# ============================================
-*.log
-logs/
-log/
-
-# ============================================
-# Dependencies
-# ============================================
-# Don't copy vendor directory - go mod download will fetch dependencies
-vendor/
-
-# ============================================
-# CI/CD
-# ============================================
-.github/
-.gitlab-ci.yml
-.travis.yml
-Jenkinsfile
-
-# ============================================
-# Other
-# ============================================
-# Node modules (if you have any frontend)
-node_modules/
-
-# Coverage reports
-*.coverprofile
-
